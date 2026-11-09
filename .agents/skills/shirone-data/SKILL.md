@@ -10,7 +10,7 @@ description: Managing Shirone data-backed pages and albums - adding or editing a
 - 文章和动态写入 `src/content/`，使用 `shirone-writing`。
 - 页面行为、开关、排序和凭据写入 `src/config/`，使用 `shirone-config`。
 - 具体条目内容写入 `src/data/`；不要把内容实体塞进 config。
-- 相册不是 Content Collection，而是 `public/images/albums/` 下的目录数据。
+- 相册不是 Content Collection，而是内容仓 `images/albums/` 下按相册分目录的数据（目录按需创建）。
 
 ## 数据页工作流
 

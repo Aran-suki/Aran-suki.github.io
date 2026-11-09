@@ -67,7 +67,7 @@ description: Operate Shirone content separation and dual-repository workflows af
 - **受保护路径与生成物豁免**：
   以下构建期派生产物受系统严格保护，**既不参与同步裁剪，也不允许外部内容仓覆盖**（提供同名文件将报错拦截）：说说缩略图、番剧封面、字体子集产物以及 `shirone.content.json` 中配置的 `keep` 白名单。
   **番剧快照（`src/data/anime-snapshots/**`）是特例**：同步方向允许内容仓提供（基线语义，`anime:sync` 成功抓取后覆盖 `<provider>.json`；自定义 `source.file` 为使用者纯输入，永不回写），导出永不回写、清理不删除；各目录 `.gitkeep` 同样不拦截同步，仅豁免导出与清理。
-  > 依据 `docs/asset-pipeline.md`，`src/assets/` 和 `public/images/` 归属内容仓，而 `public/assets/` 下按业务域归档的是可重复构建的派生产物，二者绝不能混淆。
+  > 依据 `docs/asset-pipeline.md`，`src/assets/` 与内容仓中的 `images/` 目录归属内容仓，而 `public/assets/` 下按业务域归档的是可重复构建的派生产物，二者绝不能混淆。
 
 - **顶层目录对等裁剪**：
   同步裁剪只在内容仓确实拥有的顶层目录内发生。例如内容仓没有 `content/spec/` 或 `content/series/` 时，代码仓原有的 `src/content/spec/`、`src/content/series/` 将完整保留，反向导出亦同理。
