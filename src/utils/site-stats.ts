@@ -5,6 +5,7 @@
  */
 import { render } from "astro:content";
 import { seriesConfig } from "../config/seriesConfig.ts";
+import { siteConfig } from "../config/siteConfig.ts";
 import {
 	getCategoryList,
 	getSeriesCatalog,
@@ -29,6 +30,27 @@ export interface SiteStats {
 }
 
 const DAY_MS = 86_400_000;
+
+/** 某时刻在站点时区中的日历日（UTC 零点时间戳），用于按“自然日”计算天数。 */
+function calendarDay(ms: number): number {
+	const parts = new Intl.DateTimeFormat("en-CA", {
+		timeZone: siteConfig.timeZone,
+		year: "numeric",
+		month: "2-digit",
+		day: "2-digit",
+	}).formatToParts(new Date(ms));
+	const get = (type: string) =>
+		Number(parts.find((part) => part.type === type)?.value);
+	return Date.UTC(get("year"), get("month") - 1, get("day"));
+}
+
+/** 配置的运行天数起算日（YYYY-MM-DD）→ 日历日时间戳；未配置返回 null。 */
+function configuredStartDay(): number | null {
+	if (!siteConfig.startDate) return null;
+	const [year, month, day] = siteConfig.startDate.split("-").map(Number);
+	if (!year || !month || !day) return null;
+	return Date.UTC(year, month - 1, day);
+}
 
 let cache: SiteStats | null = null;
 
@@ -67,9 +89,16 @@ export async function getSiteStats(): Promise<SiteStats> {
 		/** 系列实体数（功能关闭时为 0，SiteStats 不产出该行） */
 		series: seriesCatalog?.size ?? 0,
 		words,
-		days: Number.isFinite(earliest)
-			? Math.max(0, Math.floor((Date.now() - earliest) / DAY_MS))
-			: 0,
+		days: (() => {
+			const startDay =
+				configuredStartDay() ??
+				(Number.isFinite(earliest) ? calendarDay(earliest) : null);
+			if (startDay === null) return 0;
+			return Math.max(
+				0,
+				Math.floor((calendarDay(Date.now()) - startDay) / DAY_MS),
+			);
+		})(),
 		lastActivity:
 			latestActivity > 0 ? new Date(latestActivity).toISOString() : null,
 	};

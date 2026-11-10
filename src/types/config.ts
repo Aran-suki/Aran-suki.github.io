@@ -105,6 +105,9 @@ export type SiteConfig = {
 	/** IANA time zone used to interpret precise content timestamps. */
 	timeZone: string;
 
+	/** 运行天数起算日（YYYY-MM-DD）。缺省时取最早一篇文章的发布日。 */
+	startDate?: string;
+
 	themeColor: {
 		hue: number;
 		fixed: boolean;
