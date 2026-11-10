@@ -140,9 +140,16 @@ onMount(() => {
 		unsubscribe = runtime.subscribe((next) => {
 			snapshot = next;
 		});
+		// preload: "eager" —— 组件挂载即预取歌单元数据（进入页面就请求）。
 		// preload: "metadata" —— 组件进入视口时预取歌单元数据（仅元信息，不预取音频）。
 		// 未配置/配置 "none" 时保持按需：等用户播放或展开播放列表才请求。
 		if (
+			hasMeting &&
+			!hasInitialTracks &&
+			options.meting?.preload === "eager"
+		) {
+			void runtime?.initialize();
+		} else if (
 			hasMeting &&
 			!hasInitialTracks &&
 			options.meting?.preload === "metadata" &&

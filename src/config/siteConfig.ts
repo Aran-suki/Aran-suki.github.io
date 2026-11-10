@@ -10,7 +10,7 @@ import { withUserConfig } from "../utils/config-overlay.ts";
  * 类型见 src/types/config.ts。
  */
 export const siteConfig: SiteConfig = withUserConfig("site", {
-	site: "https://aran-suki.github.io/",
+	site: "https://shinaki.pages.dev/",
 	base: "/",
 	title: "Shinakiの部屋",
 	subtitle: "A Material 3 anime blog",

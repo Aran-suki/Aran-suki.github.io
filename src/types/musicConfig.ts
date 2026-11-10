@@ -34,7 +34,7 @@ export interface TrackDescriptor {
 	readonly duration?: number;
 }
 
-export type MetingPreloadMode = "metadata" | "none";
+export type MetingPreloadMode = "eager" | "metadata" | "none";
 
 export interface MetingMusicConfig {
 	/** 音乐平台，默认 netease（网易云音乐） */
@@ -46,7 +46,8 @@ export interface MetingMusicConfig {
 	/** Meting API 地址模板，默认使用公开 API */
 	readonly api?: string;
 	/**
-	 * 是否在音乐组件进入视口时预取歌单元数据：
+	 * 是否预取歌单元数据：
+	 * - "eager"：组件挂载即请求一次歌单（进入页面就发起，不等视口/交互）；
 	 * - "metadata"：进入视口即请求一次歌单，**仅取元信息**（曲名/歌手/封面，不预取音频流），
 	 *   返回后卡片直接显示第一首曲目；
 	 * - "none"（默认）：不预取，等用户播放/展开播放列表时才请求（卡片显示「尚未请求」占位）。
