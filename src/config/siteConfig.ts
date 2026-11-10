@@ -12,7 +12,7 @@ import { withUserConfig } from "../utils/config-overlay.ts";
 export const siteConfig: SiteConfig = withUserConfig("site", {
 	site: "https://aran-suki.github.io/",
 	base: "/",
-	title: "詩秋 · SHINAKI",
+	title: "Shinakiの部屋",
 	subtitle: "A Material 3 anime blog",
 	// 电脑端顶栏标题与导航内容区域："left" 左对齐，"center" 居中。
 	topAppBar: {
@@ -70,7 +70,7 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 		homeText: {
 			// 仅在首页 Banner 中显示，标题与副标题会上下居中排列。
 			enable: true,
-			title: "詩秋 · SHINAKI",
+			title: "Shinakiの部屋",
 			subtitle: [
 				"欢迎来到我的博客，一个 Material 3 风格的博客。",
 				"在自己的世界里，记录自己的故事。",
