@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { announcementConfig } from "../../src/config/announcementConfig";
 
 test.describe("Announcement Widget", () => {
 	test("renders announcement with title, content, link, and close functionality", async ({
@@ -14,8 +15,12 @@ test.describe("Announcement Widget", () => {
 		const announcement = page.locator('widget-layout[data-id="announcement"]');
 		await expect(announcement).toBeVisible();
 
-		// 测试关闭功能
+		// 测试关闭功能（仅当站点配置允许关闭时）
 		const closeBtn = announcement.locator(".announcement-close-btn");
+		if (!announcementConfig.closable) {
+			await expect(closeBtn).toHaveCount(0);
+			return;
+		}
 		await expect(closeBtn).toBeVisible();
 		await closeBtn.click();
 		await expect(announcement).toBeHidden();
