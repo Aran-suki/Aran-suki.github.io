@@ -73,8 +73,8 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 			title: "詩秋 · SHINAKI",
 			subtitle: [
 				"欢迎来到我的博客，一个 Material 3 风格的博客。",
-				"Welcome to my blog, a Material 3 anime blog.",
-				"艾拉酱可爱捏"
+				"在自己的世界里，记录自己的故事。",
+				"这里记录思考、生活、技术、游戏，以及那些值得留下的瞬间。",
 			],
 			typewriter: {
 				// 副标题逐字显示；关闭后直接显示完整副标题。
