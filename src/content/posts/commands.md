@@ -44,7 +44,7 @@ git push origin main
 
 ---
 
-## 三、更新追番数据（需要走代理时）
+## 三、更新追番数据（走代理时）
 
 ```bash
 NODE_USE_ENV_PROXY=1 HTTPS_PROXY=http://127.0.0.1:2080 node scripts/anime/sync.mjs --provider bangumi
@@ -99,7 +99,7 @@ git push origin main
 ## 五、整合命令
 
 ```bash
-cd /d/Shirone && pnpm build && git add -A && git commit -m "chore: update site" && git push origin main
+pnpm build && git add -A && git commit -m "chore: update site" && git push origin main
 ```
 
 把 `chore: update site` 换成实际做的事就行。

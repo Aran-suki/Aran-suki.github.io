@@ -27,7 +27,7 @@ export const zh_CN: Translation = {
 	[Key.loadMore]: "加载更多",
 
 	[Key.anime]: "番剧",
-	[Key.animeBanner]: "我的追番清单 —— 正在看的、看完的、排队的。",
+	[Key.animeBanner]: "我的追番清单 —— 正在看的、看完的、排队的。数据源于Bangumi",
 	[Key.animeNoResults]: "没有符合条件的番剧",
 	[Key.animeCounts]: "部番剧",
 	[Key.animeStatusWatching]: "在看",
