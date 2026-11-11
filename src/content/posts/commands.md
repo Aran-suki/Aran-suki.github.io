@@ -22,7 +22,7 @@ git add -A
 git commit -m "post: 新增文章 xxx"     # 或 feat: / fix: / docs: / chore:
 
 # 推送
-git push origin main
+git push
 ```
 
 推送后 GitHub Actions 会自动构建并发布；Cloudflare（如果已连仓库）也会自动构建 `*.pages.dev`。
@@ -39,7 +39,7 @@ pnpm new-post my-post-name
 pnpm build
 git add -A
 git commit -m "post: my-post-name"
-git push origin main
+git push
 ```
 
 ---
@@ -52,7 +52,7 @@ NODE_USE_ENV_PROXY=1 HTTPS_PROXY=http://127.0.0.1:2080 node scripts/anime/sync.m
 # 确认 src/data/anime-snapshots/bangumi.json 有变化后
 git add src/data/anime-snapshots/bangumi.json
 git commit -m "chore: sync bangumi snapshot"
-git push origin main
+git push
 ```
 
 > 说明：快照文件现在已提交进仓库，Cloudflare 和 GitHub Pages 构建时都会读它；本地 sync 后记得把 json 一起提交。
@@ -65,21 +65,10 @@ git push origin main
 
 ```bash
 git pull --rebase origin main
-git push origin main
+git push
 ```
 
-### `git status` 突然冒出一大堆没动过的文件
-
-多半是 Windows 换行（CRLF）差异。先看真实改动再决定：
-
-```bash
-git diff -w --stat          # 忽略空白后的真实改动
-git diff --ignore-cr-at-eol --name-only
-```
-
-确认是纯换行的话，可以 `git checkout -- <那些文件>` 还原，别直接 `git add -A` 把噪声提交进去。
-
-### 只想本地预览，不发布
+### 本地预览
 
 ```bash
 pnpm dev          # http://localhost:4321
@@ -91,7 +80,7 @@ pnpm dev          # http://localhost:4321
 
 ```bash
 git commit --allow-empty -m "chore: trigger deploy"
-git push origin main
+git push
 ```
 
 ---
@@ -99,7 +88,7 @@ git push origin main
 ## 五、整合命令
 
 ```bash
-pnpm build && git add -A && git commit -m "chore: update site" && git push origin main
+pnpm build && git add -A && git commit -m "chore: update site" && git push
 ```
 
 把 `chore: update site` 换成实际做的事就行。
