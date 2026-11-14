@@ -38,6 +38,7 @@ export type SidebarPage =
 	| "projects" // 项目
 	| "devices" // 设备展示
 	| "games" // 游戏展示
+	| "maimai" // 舞萌成绩页
 	| "timeline" // 时间线
 	| "albums" // 相册
 	| "about" // 关于

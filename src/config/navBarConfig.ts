@@ -122,6 +122,12 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		icon: "material-symbols:auto-stories-outline-rounded",
 		pageKey: "series",
 	},
+	Maimai: {
+		name: "舞萌DX",
+		url: "/maimai/",
+		icon: "material-symbols:music-note-rounded",
+		pageKey: "maimai",
+	},
 	About: {
 		name: i18n(I18nKey.about),
 		url: "/about/",
@@ -144,6 +150,7 @@ const defaultNavBarConfig: NavBarConfig = {
 		LinkPresets.Friends,
 		LinkPresets.Moments,
 		LinkPresets.Anime,
+		LinkPresets.Maimai,
 		LinkPresets.Compass,
 		LinkPresets.Albums,
 		{

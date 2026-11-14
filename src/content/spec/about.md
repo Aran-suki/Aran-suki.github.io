@@ -14,18 +14,11 @@
 
 **【隐藏偏好】** #音游玩家(SEGA Sound Team/BilliumMoto) #同人社团爱好者 #怀旧千禧摇滚 #小众实验底色
 
-## 这里有什么
-
-- **文章**：偶尔写点技术折腾、生活记录，或者单纯想说的话。
-- **动态**：比文章轻一些的碎碎念，随手截图和小实验都会丢在这里。
-- **追番 / 游戏 / 设备**：记录在看的动画、在玩的游戏，以及日常在用的数码装备。
-- **音乐**：侧栏里有一个小小的播放器，放着最近常听的歌。
-
 ## 关于这个站点
 
-整个站点基于 [Astro 7](https://astro.build/) 构建，交互部分用 [Svelte 5](https://svelte.dev/)，样式是 [Tailwind CSS 4](https://tailwindcss.com/) 与 [Stylus](https://stylus-lang.com/)，整体遵循 **Material 3 Expressive** 的设计语言。页面切换由 Swup 驱动，搜索则交给 [Pagefind](https://pagefind.app/)，使用[DSH](https://www.deepseek.com/harness/)进行站点优化和自定义。
+整个站点基于 [Astro 7](https://astro.build/) 构建，交互部分用 [Svelte 5](https://svelte.dev/)，样式是 [Tailwind CSS 4](https://tailwindcss.com/) 与 [Stylus](https://stylus-lang.com/)，整体遵循 **Material 3 Expressive** 的设计语言。页面切换由 Swup 驱动，搜索则交给 [Pagefind](https://pagefind.app/)。
 
-主题使用的是 **Shirone**（白音）——一个偏向二次元、强调表现力的博客主题：
+主题使用的是 **Shirone**（白音）博客主题：
 
 ::github{repo="LyraVoid/Shirone"}
 

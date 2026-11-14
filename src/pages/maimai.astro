@@ -1,0 +1,515 @@
+---
+/**
+ * 舞萌页：数据来自水鱼查分器快照（src/data/maimai/player.json）。
+ * 快照由 `DF_TOKEN=... node scripts/maimai/sync.mjs` 生成，令牌不进入仓库。
+ */
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import player from "@/data/maimai/player.json";
+
+const PROFILE = {
+	name: "Aran",
+	dan: "真六段",
+	rank: "S5",
+	stars: 977,
+	status: "游戏中心岛今天也很平静呢",
+};
+
+const RATE_LABEL: Record<string, string> = {
+	sssp: "SSS+",
+	sss: "SSS",
+	ss: "SS",
+	s: "S",
+	aaa: "AAA",
+	aa: "AA",
+	a: "A",
+	bbb: "BBB",
+	bb: "BB",
+	b: "B",
+	c: "C",
+	d: "D",
+};
+
+const FC_LABEL: Record<string, string> = {
+	ap: "AP",
+	fcp: "FC+",
+	fc: "FC",
+	fs: "FS",
+	fsp: "FS+",
+	sync: "SYNC",
+};
+
+const DIFF_LABEL = ["Basic", "Advanced", "Expert", "Master", "Re:MASTER"];
+
+const groups = [
+	{ key: "new", title: "b15", subtitle: `当前版本 ${player.currentVersion}`, entries: player.b50.new },
+	{ key: "old", title: "b35", subtitle: "历史版本最佳成绩", entries: player.b50.old },
+];
+
+const updatedAt = new Date(player.updatedAt).toLocaleString("zh-CN", {
+	timeZone: "Asia/Shanghai",
+	year: "numeric",
+	month: "2-digit",
+	day: "2-digit",
+	hour: "2-digit",
+	minute: "2-digit",
+});
+
+const W6_BASE = 15000;
+const W6_TARGET = 16000;
+const w6Pct = Math.max(0, Math.min(100, ((player.rating - W6_BASE) / (W6_TARGET - W6_BASE)) * 100));
+
+const pct = (value: number) => `${value.toFixed(4).replace(/0+$/, "").replace(/\.$/, "")}%`;
+---
+
+<MainGridLayout
+	title="舞萌"
+	description=""
+	page="maimai"
+>
+	<section class="mm">
+		<header class="mm__card">
+			<img class="mm__avatar" src="/assets/maimai/ui/avatar.png" alt={PROFILE.name} width="112" height="112" />
+			<div class="mm__info">
+				<img class="mm__status" src="/assets/maimai/ui/status.png" alt={PROFILE.status} width="276" height="27" />
+				<div class="mm__line">
+					<span class="mm__name">{PROFILE.name}</span>
+					<span class="mm__plate">
+						<img src="/assets/maimai/ui/rating-plate.png" alt="" width="104" height="27" />
+						<strong>{player.rating}</strong>
+					</span>
+				</div>
+				<div class="mm__line mm__line--meta">
+					<img class="mm__ui" src="/assets/maimai/ui/dan.png" alt={PROFILE.dan} width="76" height="26" />
+					<img class="mm__ui" src="/assets/maimai/ui/rank.png" alt={PROFILE.rank} width="50" height="27" />
+					<span class="mm__stars"><img class="mm__ui" src="/assets/maimai/ui/star.png" alt="" width="27" height="26" /> ×{PROFILE.stars}</span>
+				</div>
+			</div>
+		</header>
+
+		<div class="mm__progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={w6Pct.toFixed(1)} aria-label="W6 进度">
+			<div class="mm__progress-head">
+				<span class="mm__progress-label">W6 进度</span>
+				<span class="mm__progress-value">{w6Pct.toFixed(1)}% · 距 W6 还差 {Math.max(0, W6_TARGET - player.rating)}</span>
+			</div>
+			<div class="mm__progress-track">
+				<div class="mm__progress-fill" style={`width:${w6Pct.toFixed(2)}%`}></div>
+				<span class="mm__progress-bear" style={`left:${w6Pct.toFixed(2)}%`}>
+					<img src="/assets/maimai/ui/derakkuma.png" alt="" width="24" height="24" />
+				</span>
+			</div>
+		</div>
+
+		{groups.map((group) => (
+			<section class="mm-group">
+				<h2 class="mm-group__title">{group.title} <small>{group.subtitle}</small></h2>
+				<ol class="mm-list">
+					{group.entries.map((entry, index) => (
+						<li class="mm-row">
+							<span class="mm-row__no">{index + 1}</span>
+							<span class="mm-row__cover">
+								{entry.cover && (
+									<img src={entry.cover} alt="" width="56" height="56" loading="lazy" />
+								)}
+							</span>
+							<div class="mm-row__main">
+								<p class="mm-row__title">{entry.title}</p>
+								<p class="mm-row__meta">
+									<span class={`mm-diff mm-diff--${entry.levelIndex}`}>{DIFF_LABEL[entry.levelIndex] ?? entry.levelLabel}</span>
+									<span class="mm-row__ds">{entry.level} · {entry.ds.toFixed(1)}</span>
+									<span class="mm-row__ach">{pct(entry.achievement)}</span>
+									{FC_LABEL[entry.fc] && <span class="mm-row__fc">{FC_LABEL[entry.fc]}</span>}
+								</p>
+							</div>
+							<strong class="mm-row__ra">{entry.ra}</strong>
+						</li>
+					))}
+				</ol>
+			</section>
+		))}
+
+		<p class="mm__source">
+			数据来自 <a href="https://maimai.diving-fish.com/" target="_blank" rel="noopener noreferrer">水鱼查分器</a>，
+			更新于 {updatedAt}。
+		</p>
+	</section>
+</MainGridLayout>
+
+<style>
+	.mm {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.mm__card {
+		width: 100%;
+		display: flex;
+		gap: 0.8rem;
+		align-items: center;
+		max-width: 29rem;
+		margin: 0 auto;
+		padding: 0.8rem;
+		background: #fff;
+		border: 2px solid #1f1f1f;
+		border-radius: 0.9rem;
+		box-shadow: 0 6px 18px rgb(0 0 0 / 0.08);
+	}
+
+	.mm__avatar {
+		width: 6.6rem;
+		height: 6.6rem;
+		object-fit: cover;
+		border-radius: 0.55rem;
+	}
+
+	.mm__info {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		gap: 0.5rem;
+		min-width: 0;
+	}
+
+	.mm__status {
+		display: block;
+		width: 100%;
+		height: auto;
+		margin: 0;
+	}
+
+	.mm__line {
+		display: flex;
+		gap: 0.6rem;
+		align-items: center;
+	}
+
+	.mm__name {
+		display: flex;
+		flex: 1;
+		align-items: center;
+		min-height: 1.7rem;
+		padding: 0.1rem 0.8rem;
+		font-weight: 700;
+		font-size: 1.05rem;
+		background: #fff;
+		border: 2px solid #b9b9b9;
+		border-radius: 0.4rem;
+		box-shadow: inset 0 3px 6px rgb(0 0 0 / 0.12);
+	}
+
+	.mm__plate {
+		position: relative;
+		display: inline-block;
+		flex: none;
+		width: 6.5rem;
+		line-height: 0;
+	}
+
+	.mm__plate img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.mm__plate strong {
+		position: absolute;
+		inset: 21% 5% 17.5% 42%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #ececec;
+		font: 500 0.85rem/1 "Segoe UI", "Noto Sans SC", system-ui, sans-serif;
+		letter-spacing: 0.08em;
+		text-shadow: 0 1px 2px rgb(0 0 0 / 0.35);
+	}
+
+	.mm__pill {
+		padding: 0.2rem 0.75rem;
+		color: #fff;
+		font-weight: 800;
+		font-size: 0.85rem;
+		border-radius: 999px;
+	}
+
+	.mm__pill--dan {
+		background: linear-gradient(90deg, #ff9de2, #b197fc, #74c0fc);
+		text-shadow: 0 1px 2px rgb(0 0 0 / 0.25);
+	}
+
+	.mm__pill--rank {
+		background: linear-gradient(#f6d365, #c98b2e);
+		border: 2px solid #8a5a1c;
+		border-radius: 0.3rem;
+	}
+
+	.mm__stars {
+		display: inline-flex;
+		gap: 0.4rem;
+		align-items: center;
+		font-weight: 700;
+		font-size: 1.05rem;
+	}
+
+	.mm__ui {
+		display: block;
+		height: auto;
+	}
+
+	.mm__progress {
+		width: 100%;
+		max-width: 29rem;
+		margin: -0.4rem auto 0;
+	}
+
+	.mm__progress-label {
+		font-weight: 800;
+	}
+
+	.mm__progress-value {
+		color: var(--on-surface-variant);
+		font-variant-numeric: tabular-nums;
+	}
+
+	.mm__progress-track {
+		position: relative;
+		overflow: visible;
+		height: 1rem;
+		background: #fff;
+		border: 2px solid #1f1f1f;
+		border-radius: 999px;
+	}
+
+	.mm__progress-fill {
+		position: relative;
+		transform-origin: left center;
+		animation: mm-grow 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+		overflow: hidden;
+		height: 100%;
+		transition: width 0.45s ease;
+		background: linear-gradient(90deg, #ffa8d8, #b197fc, #74c0fc);
+		box-shadow: inset 0 2px 0 rgb(255 255 255 / 0.45);
+		border-radius: 999px;
+	}
+
+	.mm__progress-fill::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(100deg, transparent 30%, rgb(255 255 255 / 0.4) 50%, transparent 70%);
+		transform: translateX(-100%);
+		animation: mm-shimmer 2.8s ease-in-out infinite;
+	}
+
+	.mm__progress-bear {
+		position: absolute;
+		top: 50%;
+		width: 1.7rem;
+		height: 1.7rem;
+		transform: translate(-50%, -50%);
+		transition: left 0.45s ease;
+	}
+
+	.mm__progress-bear img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		filter: drop-shadow(0 1px 1.5px rgb(0 0 0 / 0.3));
+		animation: mm-bob 1.8s ease-in-out infinite;
+	}
+
+	@keyframes mm-bob {
+		0%,
+		100% {
+			transform: scale(0.92);
+		}
+
+		50% {
+			transform: scale(1.08);
+		}
+	}
+
+	.mm__progress-head {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 0.75rem;
+		margin-bottom: 0.35rem;
+		font-size: 0.85rem;
+	}
+
+	@keyframes mm-grow {
+		from {
+			transform: scaleX(0);
+		}
+
+		to {
+			transform: scaleX(1);
+		}
+	}
+
+	@keyframes mm-shimmer {
+		to {
+			transform: translateX(100%);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.mm__progress-fill,
+		.mm__progress-fill::before,
+		.mm__progress-bear img {
+			animation: none;
+		}
+	}
+
+	.mm-group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.mm-group__title {
+		margin: 0;
+		font-weight: 800;
+		font-size: 1.15rem;
+	}
+
+	.mm-group__title small {
+		margin-left: 0.5rem;
+		color: var(--on-surface-variant);
+		font-weight: 500;
+		font-size: 0.8rem;
+	}
+
+	.mm-list {
+		display: grid;
+		gap: 0.5rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.mm-row {
+		display: flex;
+		gap: 0.6rem;
+		align-items: center;
+		padding: 0.5rem;
+		background: var(--card-bg);
+		border: 1px solid var(--outline-variant);
+		border-radius: 0.6rem;
+	}
+
+	.mm-row__no {
+		width: 1.6rem;
+		color: var(--on-surface-variant);
+		font-weight: 700;
+		font-size: 0.8rem;
+		text-align: center;
+	}
+
+	.mm-row__cover {
+		position: relative;
+		display: flex;
+		flex: none;
+		align-items: center;
+		justify-content: center;
+		width: 3.5rem;
+		height: 3.5rem;
+		background: var(--surface-container-high);
+		border-radius: 0.4rem;
+	}
+
+	.mm-row__cover::before {
+		content: "♪";
+		color: var(--on-surface-variant);
+		font-size: 1.2rem;
+	}
+
+	.mm-row__cover img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: inherit;
+	}
+
+	.mm-row__main {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.mm-row__title {
+		overflow: hidden;
+		margin: 0 0 0.2rem;
+		font-weight: 700;
+		font-size: 0.9rem;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	.mm-row__meta {
+		display: flex;
+		gap: 0.4rem;
+		align-items: center;
+		margin: 0;
+		color: var(--on-surface-variant);
+		font-size: 0.72rem;
+	}
+
+	.mm-diff {
+		padding: 0 0.3rem;
+		color: #fff;
+		font-weight: 700;
+		border-radius: 0.25rem;
+	}
+
+	.mm-diff--0 { background: #4caf50; }
+	.mm-diff--1 { background: #ffb300; }
+	.mm-diff--2 { background: #e53935; }
+	.mm-diff--3 { background: #8e24aa; }
+	.mm-diff--4 { background: #455a64; }
+
+	.mm-row__ach {
+		color: var(--on-surface);
+		font-weight: 600;
+	}
+
+	.mm-row__fc {
+		padding: 0 0.25rem;
+		color: #ff5c8a;
+		border: 1px solid currentColor;
+		border-radius: 0.2rem;
+	}
+
+	.mm-row__ra {
+		font-size: 1.05rem;
+		text-align: right;
+		min-width: 2.4rem;
+	}
+
+	.mm__source {
+		margin: 0;
+		color: var(--on-surface-variant);
+		font-size: 0.75rem;
+		text-align: center;
+	}
+
+	@media (max-width: 900px) {
+		.mm-list {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 620px) {
+		.mm__avatar {
+			width: 5rem;
+			height: 5rem;
+		}
+
+		.mm__line {
+			flex-wrap: wrap;
+		}
+	}
+</style>
