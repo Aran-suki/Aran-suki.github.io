@@ -451,7 +451,9 @@ const pct = (value: number) => `${value.toFixed(4).replace(/0+$/, "").replace(/\
 
 	.mm-row__meta {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 0.4rem;
+		row-gap: 0.2rem;
 		align-items: center;
 		margin: 0;
 		color: var(--on-surface-variant);
@@ -498,7 +500,7 @@ const pct = (value: number) => `${value.toFixed(4).replace(/0+$/, "").replace(/\
 
 	@media (max-width: 900px) {
 		.mm-list {
-			grid-template-columns: 1fr;
+			grid-template-columns: minmax(0, 1fr);
 		}
 	}
 
