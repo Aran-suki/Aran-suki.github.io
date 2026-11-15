@@ -93,7 +93,7 @@ const pct = (value: number) => `${value.toFixed(4).replace(/0+$/, "").replace(/\
 			</div>
 			<div class="mm__progress-track">
 				<div class="mm__progress-fill" style={`width:${w6Pct.toFixed(2)}%`}></div>
-				<span class="mm__progress-bear" style={`left:${w6Pct.toFixed(2)}%`}>
+				<span class="mm__progress-bear" style={`--mm-pct:${w6Pct.toFixed(2)}%`}>
 					<img src="/assets/maimai/ui/derakkuma.png" alt="" width="24" height="24" />
 				</span>
 			</div>
@@ -303,10 +303,11 @@ const pct = (value: number) => `${value.toFixed(4).replace(/0+$/, "").replace(/\
 	.mm__progress-bear {
 		position: absolute;
 		top: 50%;
+		left: var(--mm-pct);
 		width: 1.7rem;
 		height: 1.7rem;
 		transform: translate(-50%, -50%);
-		transition: left 0.45s ease;
+		animation: mm-bear-run 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 	}
 
 	.mm__progress-bear img {
@@ -315,18 +316,6 @@ const pct = (value: number) => `${value.toFixed(4).replace(/0+$/, "").replace(/\
 		height: 100%;
 		object-fit: contain;
 		filter: drop-shadow(0 1px 1.5px rgb(0 0 0 / 0.3));
-		animation: mm-bob 1.8s ease-in-out infinite;
-	}
-
-	@keyframes mm-bob {
-		0%,
-		100% {
-			transform: scale(0.92);
-		}
-
-		50% {
-			transform: scale(1.08);
-		}
 	}
 
 	.mm__progress-head {
@@ -336,6 +325,16 @@ const pct = (value: number) => `${value.toFixed(4).replace(/0+$/, "").replace(/\
 		gap: 0.75rem;
 		margin-bottom: 0.35rem;
 		font-size: 0.85rem;
+	}
+
+	@keyframes mm-bear-run {
+		from {
+			left: 0%;
+		}
+
+		to {
+			left: var(--mm-pct);
+		}
 	}
 
 	@keyframes mm-grow {
