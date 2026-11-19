@@ -301,6 +301,11 @@ export const musicSidebarStylus = `
 	&__playlist-panel
 		overflow: hidden
 
+		/* 收起时跳过整棵播放列表的渲染：列表可达数百行（Meting 歌单），
+		   否则每次主题切换都要为这些隐藏行重算样式/重绘，造成明显卡顿 */
+		&[aria-hidden="true"]
+			content-visibility: hidden
+
 	&__playlist
 		list-style: none
 		max-height: 12rem

@@ -31,13 +31,11 @@ onMount(() => {
 });
 </script>
 
-<div
-	class="route-progress route-progress--{style}"
-	class:route-progress--visible={visible}
-	aria-hidden="true"
->
-	<ProgressIndicator indeterminate={style} />
-</div>
+{#if visible}
+	<div class="route-progress route-progress--{style}" aria-hidden="true">
+		<ProgressIndicator indeterminate={style} />
+	</div>
+{/if}
 
 <style lang="stylus">
 .route-progress
@@ -56,6 +54,7 @@ onMount(() => {
 
 	&--visible
 		opacity: 1
+
 
 :global(body[data-banner-visible="true"][data-banner-scrolled="false"]) .route-progress
 	top: 0

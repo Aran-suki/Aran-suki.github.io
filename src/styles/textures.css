@@ -9,11 +9,12 @@
 
 #m3e-texture-canvas {
 	position: fixed;
-	inset: 0;
+	inset: -64px;
 	pointer-events: none;
 	z-index: -20;
 	opacity: var(--texture-opacity, 0.12);
 	will-change: opacity, transform;
+	backface-visibility: hidden;
 	transform: translateZ(0);
 	transition: opacity var(--m3e-duration-long, 400ms) var(--m3e-easing-standard, cubic-bezier(0.2, 0, 0, 1));
 }
@@ -90,34 +91,28 @@ html[data-texture-preset="sakura"] #m3e-texture-canvas {
 /* 动效关键帧 */
 @keyframes m3e-texture-starlight-float {
 	0%, 100% {
-		-webkit-mask-position: 0px 0px;
-		mask-position: 0px 0px;
+		transform: translate3d(0, 0, 0);
 	}
 	50% {
-		-webkit-mask-position: 14px -18px;
-		mask-position: 14px -18px;
+		transform: translate3d(14px, -18px, 0);
 	}
 }
 
 @keyframes m3e-texture-topography-flow {
 	0% {
-		-webkit-mask-position: 0px 0px;
-		mask-position: 0px 0px;
+		transform: translate3d(0, 0, 0);
 	}
 	100% {
-		-webkit-mask-position: 240px 0px;
-		mask-position: 240px 0px;
+		transform: translate3d(-240px, 0, 0);
 	}
 }
 
 @keyframes m3e-texture-sakura-fall {
 	0% {
-		-webkit-mask-position: 0px 0px;
-		mask-position: 0px 0px;
+		transform: translate3d(0, 0, 0);
 	}
 	100% {
-		-webkit-mask-position: 180px 180px;
-		mask-position: 180px 180px;
+		transform: translate3d(-180px, 180px, 0);
 	}
 }
 
