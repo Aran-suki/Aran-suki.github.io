@@ -4,8 +4,8 @@ published: 2026-11-09
 publishedAt: 2026-11-09T23:39:27+08:00
 description: "每一个博客都从一篇Hello World开始"
 image: ''
-tags: [Shirone, Astro, 博客]
-category: 随笔
+tags: [Hello World, Shirone, Astro, 博客主题, Material 3 Expressive, 设计系统, Markdown, MDX, Pagefind, 数据驱动页面]
+category: ''
 draft: false
 lang: ''
 ---

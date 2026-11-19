@@ -4,7 +4,7 @@ published: 2026-11-10
 publishedAt: 2026-11-10T14:20:39+08:00
 description: '记录了一些常用的命令'
 image: ''
-tags: [命令,Astro,Shirone]
+tags: [命令速查, Git, pnpm, Astro, 部署, Cloudflare, Bangumi, 博客维护, 笔记]
 category: '笔记'
 draft: false 
 lang: ''
