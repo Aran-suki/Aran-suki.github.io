@@ -97,11 +97,17 @@ export const sidebarConfig: SidebarConfig = withUserConfig("sidebar", {
 			],
 		},
 		{
+			type: "moeCounter",
+			enable: true,
+			slot: "top",
+			column: "secondary",
+		},
+		{
 			type: "stats",
 			enable: true,
 			slot: "top",
 			column: "secondary",
-			pages: ["home", "archive", "categories", "tags"],
+			pages: ["home", "archive", "categories", "tags", "maimai"],
 		},
 		{ type: "calendar", enable: true, slot: "top", column: "secondary" },
 		{

@@ -1,0 +1,38 @@
+---
+/**
+ * Moe Counter 访问计数（第三方图片计数器）。
+ * 直接以 <img> 引用 count.getloli.com，不写入仓库、不缓存；
+ * 仅作为侧栏独立区块展示，位于「统计」widget 之上，背景透明不带卡片。
+ */
+interface Props {
+	class?: string;
+	style?: string;
+}
+
+const { class: className, style } = Astro.props;
+const counterUrl =
+	"https://count.getloli.com/@Shinaki?theme=booru-lewd&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto";
+---
+
+<div class:list={["moe-counter", className]} style={style}>
+	<img
+		class="moe-counter__img"
+		src={counterUrl}
+		alt="访问次数"
+		referrerpolicy="no-referrer"
+		width="315"
+		height="100"
+	/>
+</div>
+
+<style lang="stylus">
+.moe-counter
+	display: flex
+	justify-content: center
+
+	&__img
+		display: block
+		max-width: 100%
+		height: auto
+		image-rendering: pixelated
+</style>

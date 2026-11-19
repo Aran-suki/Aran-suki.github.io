@@ -115,6 +115,16 @@ export interface StatsWidget {
 	pages?: SidebarPage[];
 }
 
+/** Moe Counter 访问计数（第三方图片计数器，展示在统计之上） */
+export interface MoeCounterWidget {
+	type: "moeCounter";
+	enable: boolean;
+	slot: SidebarWidgetSlot;
+	column?: SidebarColumn;
+	/** 限定显示的页面，省略或空数组表示所有页面 */
+	pages?: SidebarPage[];
+}
+
 /** 月度文章历（有文日填色标记，点击日期展开当日文章） */
 export interface CalendarWidget {
 	type: "calendar";
@@ -153,6 +163,7 @@ export type SidebarWidget =
 	| SeriesWidget
 	| AnnouncementWidget
 	| StatsWidget
+	| MoeCounterWidget
 	| CalendarWidget
 	| TocWidget
 	| MusicWidget;
