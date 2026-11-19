@@ -99,6 +99,13 @@ export const sidebarConfig: SidebarConfig = withUserConfig("sidebar", {
 		{
 			type: "moeCounter",
 			enable: true,
+			slot: "sticky",
+			column: "primary",
+			mobileOnly: true,
+		},
+		{
+			type: "moeCounter",
+			enable: true,
 			slot: "top",
 			column: "secondary",
 		},

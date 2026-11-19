@@ -2,19 +2,26 @@
 /**
  * Moe Counter 访问计数（第三方图片计数器）。
  * 直接以 <img> 引用 count.getloli.com，不写入仓库、不缓存；
- * 仅作为侧栏独立区块展示，位于「统计」widget 之上，背景透明不带卡片。
+ * 桌面端作为副栏独立区块，位于「统计」widget 之上；
+ * mobileOnly 实例挂在主栏标签之后，仅在 xl 以下显示。
  */
+import type { MoeCounterWidget } from "@/types/sidebarConfig";
+
 interface Props {
+	widget?: MoeCounterWidget;
 	class?: string;
 	style?: string;
 }
 
-const { class: className, style } = Astro.props;
+const { widget, class: className, style } = Astro.props;
 const counterUrl =
 	"https://count.getloli.com/@Shinaki?theme=booru-lewd&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto";
 ---
 
-<div class:list={["moe-counter", className]} style={style}>
+<div
+	class:list={["moe-counter", { "moe-counter--mobile-only": widget?.mobileOnly }, className]}
+	style={style}
+>
 	<img
 		class="moe-counter__img"
 		src={counterUrl}
@@ -29,6 +36,10 @@ const counterUrl =
 .moe-counter
 	display: flex
 	justify-content: center
+
+	&--mobile-only
+		@media (min-width: 1280px)
+			display: none
 
 	&__img
 		display: block

@@ -123,6 +123,8 @@ export interface MoeCounterWidget {
 	column?: SidebarColumn;
 	/** 限定显示的页面，省略或空数组表示所有页面 */
 	pages?: SidebarPage[];
+	/** 仅窄屏显示（副栏在 xl 以下收起时，把它挂到主栏标签之后） */
+	mobileOnly?: boolean;
 }
 
 /** 月度文章历（有文日填色标记，点击日期展开当日文章） */
