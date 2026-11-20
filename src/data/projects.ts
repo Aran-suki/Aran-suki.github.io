@@ -14,7 +14,7 @@ export const projectsData: ProjectItem[] = [
 		phase: "building",
 		technologies: ["Astro", "Svelte", "TypeScript", "Tailwind CSS"],
 		icon: "material-symbols:deployed-code-outline-rounded",
-		cover: "/assets/projects/shirone.webp",
+		cover: "/assets/projects/shirone.avif",
 		coverAlt: "Shirone theme homepage preview",
 		featured: true,
 		repository: "https://github.com/LyraVoid/Shirone",

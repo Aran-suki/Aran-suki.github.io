@@ -6,7 +6,7 @@ import { withUserConfig } from "../utils/config-overlay.ts";
  * 类型见 src/types/config.ts。
  */
 export const profileConfig: ProfileConfig = withUserConfig("profile", {
-	avatar: "assets/images/avatar.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	avatar: "assets/images/avatar.avif", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "秋生",
 	bio: "live today？",
 	links: [

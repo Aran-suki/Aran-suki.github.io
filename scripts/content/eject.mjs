@@ -78,6 +78,7 @@ const GITIGNORE_ENTRIES = [
 	"/public/assets/music/",
 	"/public/assets/projects/",
 	"/public/assets/anime/*.webp",
+	"/public/assets/anime/*.avif",
 ];
 
 const GITIGNORE_HEADER =
@@ -405,6 +406,7 @@ function untrackPaths() {
 		"public/assets/music",
 		"public/assets/projects",
 		"public/assets/anime/*.webp",
+		"public/assets/anime/*.avif",
 	];
 	if (!options.apply) return pathspecs;
 	for (const pathspec of pathspecs) {

@@ -47,7 +47,7 @@ export interface AnimeItem {
 export const animeData: AnimeItem[] = [
 	{
 		title: "Lycoris Recoil",
-		cover: "/assets/anime/lkls.webp",
+		cover: "/assets/anime/lkls.avif",
 		link: "https://www.bilibili.com/bangumi/media/md28338623",
 		status: "completed",
 		rating: 9.8,
@@ -60,7 +60,7 @@ export const animeData: AnimeItem[] = [
 	},
 	{
 		title: "Yowamushi Pedal",
-		cover: "/assets/anime/rynh.webp",
+		cover: "/assets/anime/rynh.avif",
 		link: "https://www.bilibili.com/bangumi/media/md2590",
 		status: "watching",
 		rating: 9.5,
@@ -73,7 +73,7 @@ export const animeData: AnimeItem[] = [
 	},
 	{
 		title: "Asteroid in Love",
-		cover: "/assets/anime/laxxx.webp",
+		cover: "/assets/anime/laxxx.avif",
 		link: "https://www.bilibili.com/bangumi/media/md28224128",
 		status: "watching",
 		rating: 9.2,
@@ -86,7 +86,7 @@ export const animeData: AnimeItem[] = [
 	},
 	{
 		title: "Is the Order a Rabbit?",
-		cover: "/assets/anime/tz1.webp",
+		cover: "/assets/anime/tz1.avif",
 		link: "https://www.bilibili.com/bangumi/media/md2762",
 		status: "planned",
 		rating: 9.0,
@@ -99,7 +99,7 @@ export const animeData: AnimeItem[] = [
 	},
 	{
 		title: "The Secret of the Magic Girl",
-		cover: "/assets/anime/cmmn.webp",
+		cover: "/assets/anime/cmmn.avif",
 		link: "https://www.bilibili.com/bangumi/media/md26625039",
 		status: "watching",
 		rating: 9.0,

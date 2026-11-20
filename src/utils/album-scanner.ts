@@ -169,13 +169,14 @@ function scanAlbumDirectory(entry: fs.Dirent): AlbumGroup | null {
 		return null;
 	}
 	const external = raw.mode === "external";
+	const localCover = ["cover.avif", "cover.webp", "cover.jpg"].find(file =>
+		fs.existsSync(path.join(albumDir, file)),
+	);
 	const cover = external
 		? stringValue(raw.cover)
-		: fs.existsSync(path.join(albumDir, "cover.webp"))
-			? toPublicPath(`${id}/cover.webp`)
-			: fs.existsSync(path.join(albumDir, "cover.jpg"))
-				? toPublicPath(`${id}/cover.jpg`)
-				: "";
+		: localCover
+			? toPublicPath(`${id}/${localCover}`)
+			: "";
 	if (!cover) {
 		console.warn(`[albums] Skipping ${id}: cover is missing`);
 		return null;

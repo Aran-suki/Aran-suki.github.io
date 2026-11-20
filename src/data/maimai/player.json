@@ -40,7 +40,7 @@
 				"ra": 321,
 				"dxScore": 2050,
 				"from": "maimai でらっくす PRiSM PLUS",
-				"cover": "/assets/maimai/covers/11823.webp"
+				"cover": "/assets/maimai/covers/11823.avif"
 			},
 			{
 				"songId": 11855,
@@ -57,7 +57,7 @@
 				"ra": 319,
 				"dxScore": 2810,
 				"from": "maimai でらっくす PRiSM PLUS",
-				"cover": "/assets/maimai/covers/11855.webp"
+				"cover": "/assets/maimai/covers/11855.avif"
 			},
 			{
 				"songId": 11810,
@@ -74,7 +74,7 @@
 				"ra": 317,
 				"dxScore": 2734,
 				"from": "maimai でらっくす PRiSM PLUS",
-				"cover": "/assets/maimai/covers/11810.webp"
+				"cover": "/assets/maimai/covers/11810.avif"
 			},
 			{
 				"songId": 11842,
@@ -91,7 +91,7 @@
 				"ra": 317,
 				"dxScore": 3026,
 				"from": "maimai でらっくす PRiSM PLUS",
-				"cover": "/assets/maimai/covers/11842.webp"
+				"cover": "/assets/maimai/covers/11842.avif"
 			},
 			{
 				"songId": 11848,
@@ -108,7 +108,7 @@
 				"ra": 317,
 				"dxScore": 2872,
 				"from": "maimai でらっくす PRiSM PLUS",
-				"cover": "/assets/maimai/covers/11848.webp"
+				"cover": "/assets/maimai/covers/11848.avif"
 			},
 			{
 				"songId": 11815,
@@ -142,7 +142,7 @@
 				"ra": 315,
 				"dxScore": 2777,
 				"from": "maimai でらっくす PRiSM PLUS",
-				"cover": "/assets/maimai/covers/11809.webp"
+				"cover": "/assets/maimai/covers/11809.avif"
 			},
 			{
 				"songId": 11849,
@@ -159,7 +159,7 @@
 				"ra": 315,
 				"dxScore": 1917,
 				"from": "maimai でらっくす PRiSM PLUS",
-				"cover": "/assets/maimai/covers/11849.webp"
+				"cover": "/assets/maimai/covers/11849.avif"
 			},
 			{
 				"songId": 11816,
@@ -210,7 +210,7 @@
 				"ra": 312,
 				"dxScore": 2242,
 				"from": "maimai でらっくす PRiSM PLUS",
-				"cover": "/assets/maimai/covers/11822.webp"
+				"cover": "/assets/maimai/covers/11822.avif"
 			},
 			{
 				"songId": 11854,
@@ -227,7 +227,7 @@
 				"ra": 312,
 				"dxScore": 2298,
 				"from": "maimai でらっくす PRiSM PLUS",
-				"cover": "/assets/maimai/covers/11854.webp"
+				"cover": "/assets/maimai/covers/11854.avif"
 			},
 			{
 				"songId": 12025,
@@ -261,7 +261,7 @@
 				"ra": 311,
 				"dxScore": 2950,
 				"from": "maimai でらっくす PRiSM PLUS",
-				"cover": "/assets/maimai/covers/11876.webp"
+				"cover": "/assets/maimai/covers/11876.avif"
 			}
 		],
 		"old": [
@@ -280,7 +280,7 @@
 				"ra": 330,
 				"dxScore": 3305,
 				"from": "maimai でらっくす PRiSM",
-				"cover": "/assets/maimai/covers/11752.webp"
+				"cover": "/assets/maimai/covers/11752.avif"
 			},
 			{
 				"songId": 11713,
@@ -297,7 +297,7 @@
 				"ra": 326,
 				"dxScore": 3065,
 				"from": "maimai でらっくす PRiSM",
-				"cover": "/assets/maimai/covers/11713.webp"
+				"cover": "/assets/maimai/covers/11713.avif"
 			},
 			{
 				"songId": 11461,
@@ -314,7 +314,7 @@
 				"ra": 324,
 				"dxScore": 2565,
 				"from": "maimai でらっくす FESTiVAL",
-				"cover": "/assets/maimai/covers/11461.webp"
+				"cover": "/assets/maimai/covers/11461.avif"
 			},
 			{
 				"songId": 11550,
@@ -331,7 +331,7 @@
 				"ra": 324,
 				"dxScore": 2723,
 				"from": "maimai でらっくす BUDDiES",
-				"cover": "/assets/maimai/covers/11550.webp"
+				"cover": "/assets/maimai/covers/11550.avif"
 			},
 			{
 				"songId": 11625,
@@ -348,7 +348,7 @@
 				"ra": 324,
 				"dxScore": 2893,
 				"from": "maimai でらっくす BUDDiES",
-				"cover": "/assets/maimai/covers/11625.webp"
+				"cover": "/assets/maimai/covers/11625.avif"
 			},
 			{
 				"songId": 11023,
@@ -365,7 +365,7 @@
 				"ra": 321,
 				"dxScore": 2744,
 				"from": "maimai でらっくす",
-				"cover": "/assets/maimai/covers/11023.webp"
+				"cover": "/assets/maimai/covers/11023.avif"
 			},
 			{
 				"songId": 11227,
@@ -382,7 +382,7 @@
 				"ra": 321,
 				"dxScore": 2654,
 				"from": "maimai でらっくす UNiVERSE",
-				"cover": "/assets/maimai/covers/11227.webp"
+				"cover": "/assets/maimai/covers/11227.avif"
 			},
 			{
 				"songId": 11248,
@@ -399,7 +399,7 @@
 				"ra": 321,
 				"dxScore": 3304,
 				"from": "maimai でらっくす UNiVERSE",
-				"cover": "/assets/maimai/covers/11248.webp"
+				"cover": "/assets/maimai/covers/11248.avif"
 			},
 			{
 				"songId": 11475,
@@ -416,7 +416,7 @@
 				"ra": 321,
 				"dxScore": 2806,
 				"from": "maimai でらっくす FESTiVAL",
-				"cover": "/assets/maimai/covers/11475.webp"
+				"cover": "/assets/maimai/covers/11475.avif"
 			},
 			{
 				"songId": 11479,
@@ -433,7 +433,7 @@
 				"ra": 321,
 				"dxScore": 2775,
 				"from": "maimai でらっくす FESTiVAL",
-				"cover": "/assets/maimai/covers/11479.webp"
+				"cover": "/assets/maimai/covers/11479.avif"
 			},
 			{
 				"songId": 11681,
@@ -450,7 +450,7 @@
 				"ra": 321,
 				"dxScore": 2607,
 				"from": "maimai でらっくす PRiSM",
-				"cover": "/assets/maimai/covers/11681.webp"
+				"cover": "/assets/maimai/covers/11681.avif"
 			},
 			{
 				"songId": 11343,
@@ -467,7 +467,7 @@
 				"ra": 321,
 				"dxScore": 3077,
 				"from": "maimai でらっくす UNiVERSE",
-				"cover": "/assets/maimai/covers/11343.webp"
+				"cover": "/assets/maimai/covers/11343.avif"
 			},
 			{
 				"songId": 797,
@@ -484,7 +484,7 @@
 				"ra": 319,
 				"dxScore": 2727,
 				"from": "maimai FiNALE",
-				"cover": "/assets/maimai/covers/00797.webp"
+				"cover": "/assets/maimai/covers/00797.avif"
 			},
 			{
 				"songId": 11174,
@@ -501,7 +501,7 @@
 				"ra": 319,
 				"dxScore": 2916,
 				"from": "maimai でらっくす Splash",
-				"cover": "/assets/maimai/covers/11174.webp"
+				"cover": "/assets/maimai/covers/11174.avif"
 			},
 			{
 				"songId": 11004,
@@ -518,7 +518,7 @@
 				"ra": 319,
 				"dxScore": 2667,
 				"from": "maimai でらっくす",
-				"cover": "/assets/maimai/covers/11004.webp"
+				"cover": "/assets/maimai/covers/11004.avif"
 			},
 			{
 				"songId": 11328,
@@ -535,7 +535,7 @@
 				"ra": 319,
 				"dxScore": 3340,
 				"from": "maimai でらっくす UNiVERSE",
-				"cover": "/assets/maimai/covers/11328.webp"
+				"cover": "/assets/maimai/covers/11328.avif"
 			},
 			{
 				"songId": 1051,
@@ -552,7 +552,7 @@
 				"ra": 319,
 				"dxScore": 2386,
 				"from": "maimai でらっくす UNiVERSE",
-				"cover": "/assets/maimai/covers/01051.webp"
+				"cover": "/assets/maimai/covers/01051.avif"
 			},
 			{
 				"songId": 11576,
@@ -569,7 +569,7 @@
 				"ra": 319,
 				"dxScore": 3189,
 				"from": "maimai でらっくす FESTiVAL",
-				"cover": "/assets/maimai/covers/11576.webp"
+				"cover": "/assets/maimai/covers/11576.avif"
 			},
 			{
 				"songId": 11594,
@@ -586,7 +586,7 @@
 				"ra": 319,
 				"dxScore": 2603,
 				"from": "maimai でらっくす BUDDiES",
-				"cover": "/assets/maimai/covers/11594.webp"
+				"cover": "/assets/maimai/covers/11594.avif"
 			},
 			{
 				"songId": 11627,
@@ -603,7 +603,7 @@
 				"ra": 319,
 				"dxScore": 2881,
 				"from": "maimai でらっくす BUDDiES",
-				"cover": "/assets/maimai/covers/11627.webp"
+				"cover": "/assets/maimai/covers/11627.avif"
 			},
 			{
 				"songId": 11675,
@@ -620,7 +620,7 @@
 				"ra": 319,
 				"dxScore": 2794,
 				"from": "maimai でらっくす PRiSM",
-				"cover": "/assets/maimai/covers/11675.webp"
+				"cover": "/assets/maimai/covers/11675.avif"
 			},
 			{
 				"songId": 11725,
@@ -637,7 +637,7 @@
 				"ra": 319,
 				"dxScore": 2742,
 				"from": "maimai でらっくす PRiSM",
-				"cover": "/assets/maimai/covers/11725.webp"
+				"cover": "/assets/maimai/covers/11725.avif"
 			},
 			{
 				"songId": 11755,
@@ -654,7 +654,7 @@
 				"ra": 319,
 				"dxScore": 2771,
 				"from": "maimai でらっくす PRiSM",
-				"cover": "/assets/maimai/covers/11755.webp"
+				"cover": "/assets/maimai/covers/11755.avif"
 			},
 			{
 				"songId": 11771,
@@ -671,7 +671,7 @@
 				"ra": 319,
 				"dxScore": 2483,
 				"from": "maimai でらっくす PRiSM",
-				"cover": "/assets/maimai/covers/11771.webp"
+				"cover": "/assets/maimai/covers/11771.avif"
 			},
 			{
 				"songId": 384,
@@ -688,7 +688,7 @@
 				"ra": 318,
 				"dxScore": 2353,
 				"from": "maimai ORANGE",
-				"cover": "/assets/maimai/covers/00384.webp"
+				"cover": "/assets/maimai/covers/00384.avif"
 			},
 			{
 				"songId": 11554,
@@ -705,7 +705,7 @@
 				"ra": 318,
 				"dxScore": 2674,
 				"from": "maimai でらっくす BUDDiES",
-				"cover": "/assets/maimai/covers/11554.webp"
+				"cover": "/assets/maimai/covers/11554.avif"
 			},
 			{
 				"songId": 324,
@@ -722,7 +722,7 @@
 				"ra": 317,
 				"dxScore": 2490,
 				"from": "maimai GreeN PLUS",
-				"cover": "/assets/maimai/covers/00324.webp"
+				"cover": "/assets/maimai/covers/00324.avif"
 			},
 			{
 				"songId": 390,
@@ -739,7 +739,7 @@
 				"ra": 317,
 				"dxScore": 2374,
 				"from": "maimai ORANGE",
-				"cover": "/assets/maimai/covers/00390.webp"
+				"cover": "/assets/maimai/covers/00390.avif"
 			},
 			{
 				"songId": 760,
@@ -756,7 +756,7 @@
 				"ra": 317,
 				"dxScore": 2160,
 				"from": "MiLK PLUS",
-				"cover": "/assets/maimai/covers/00760.webp"
+				"cover": "/assets/maimai/covers/00760.avif"
 			},
 			{
 				"songId": 772,
@@ -773,7 +773,7 @@
 				"ra": 317,
 				"dxScore": 2917,
 				"from": "MiLK PLUS",
-				"cover": "/assets/maimai/covers/00772.webp"
+				"cover": "/assets/maimai/covers/00772.avif"
 			},
 			{
 				"songId": 11299,
@@ -790,7 +790,7 @@
 				"ra": 317,
 				"dxScore": 2251,
 				"from": "maimai でらっくす UNiVERSE",
-				"cover": "/assets/maimai/covers/11299.webp"
+				"cover": "/assets/maimai/covers/11299.avif"
 			},
 			{
 				"songId": 11472,
@@ -807,7 +807,7 @@
 				"ra": 317,
 				"dxScore": 2998,
 				"from": "maimai でらっくす FESTiVAL",
-				"cover": "/assets/maimai/covers/11472.webp"
+				"cover": "/assets/maimai/covers/11472.avif"
 			},
 			{
 				"songId": 11739,
@@ -824,7 +824,7 @@
 				"ra": 317,
 				"dxScore": 3101,
 				"from": "maimai でらっくす PRiSM",
-				"cover": "/assets/maimai/covers/11739.webp"
+				"cover": "/assets/maimai/covers/11739.avif"
 			},
 			{
 				"songId": 11741,
@@ -841,7 +841,7 @@
 				"ra": 317,
 				"dxScore": 2682,
 				"from": "maimai でらっくす PRiSM",
-				"cover": "/assets/maimai/covers/11741.webp"
+				"cover": "/assets/maimai/covers/11741.avif"
 			},
 			{
 				"songId": 11759,
@@ -858,7 +858,7 @@
 				"ra": 317,
 				"dxScore": 2201,
 				"from": "maimai でらっくす PRiSM",
-				"cover": "/assets/maimai/covers/11759.webp"
+				"cover": "/assets/maimai/covers/11759.avif"
 			}
 		]
 	},

@@ -68,20 +68,20 @@ const pct = (value: number) => `${value.toFixed(4).replace(/0+$/, "").replace(/\
 >
 	<section class="mm">
 		<header class="mm__card">
-			<img class="mm__avatar" src="/assets/maimai/ui/avatar.png" alt={PROFILE.name} width="112" height="112" />
+			<img class="mm__avatar" src="/assets/maimai/ui/avatar.avif" alt={PROFILE.name} width="112" height="112" />
 			<div class="mm__info">
-				<img class="mm__status" src="/assets/maimai/ui/status.png" alt={PROFILE.status} width="276" height="27" />
+				<img class="mm__status" src="/assets/maimai/ui/status.avif" alt={PROFILE.status} width="276" height="27" />
 				<div class="mm__line">
 					<span class="mm__name">{PROFILE.name}</span>
 					<span class="mm__plate">
-						<img src="/assets/maimai/ui/rating-plate.png" alt="" width="104" height="27" />
+						<img src="/assets/maimai/ui/rating-plate.avif" alt="" width="104" height="27" />
 						<strong>{player.rating}</strong>
 					</span>
 				</div>
 				<div class="mm__line mm__line--meta">
-					<img class="mm__ui" src="/assets/maimai/ui/dan.png" alt={PROFILE.dan} width="76" height="26" />
-					<img class="mm__ui" src="/assets/maimai/ui/rank.png" alt={PROFILE.rank} width="50" height="27" />
-					<span class="mm__stars"><img class="mm__ui" src="/assets/maimai/ui/star.png" alt="" width="27" height="26" /> ×{PROFILE.stars}</span>
+					<img class="mm__ui" src="/assets/maimai/ui/dan.avif" alt={PROFILE.dan} width="76" height="26" />
+					<img class="mm__ui" src="/assets/maimai/ui/rank.avif" alt={PROFILE.rank} width="50" height="27" />
+					<span class="mm__stars"><img class="mm__ui" src="/assets/maimai/ui/star.avif" alt="" width="27" height="26" /> ×{PROFILE.stars}</span>
 				</div>
 			</div>
 		</header>
@@ -94,7 +94,7 @@ const pct = (value: number) => `${value.toFixed(4).replace(/0+$/, "").replace(/\
 			<div class="mm__progress-track">
 				<div class="mm__progress-fill" style={`width:${w6Pct.toFixed(2)}%`}></div>
 				<span class="mm__progress-bear" style={`--mm-pct:${w6Pct.toFixed(2)}%`}>
-					<img src="/assets/maimai/ui/derakkuma.png" alt="" width="24" height="24" />
+					<img src="/assets/maimai/ui/derakkuma.avif" alt="" width="24" height="24" />
 				</span>
 			</div>
 		</div>

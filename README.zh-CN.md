@@ -30,7 +30,7 @@
 
 当前参考跑分中，Performance、Accessibility、Best Practices 和 SEO 均为 100，Agentic browsing 三项检查全部通过。详细性能指标在本次测试中同样达到 100；实际结果会因托管环境、内容和网络条件而变化。
 
-![Shirone 性能跑分](./Benchmark.webp)
+![Shirone 性能跑分](./Benchmark.avif)
 
 ![Shirone 首页](./public/assets/projects/shirone.webp)
 

@@ -30,7 +30,7 @@
 
 現在のリファレンス計測では、Performance、Accessibility、Best Practices、SEO がすべて 100、Agentic browsing も 3/3 でした。詳細なパフォーマンス指標も今回の計測では 100 です。実際の結果はホスティング環境、コンテンツ、ネットワーク条件によって変わります。
 
-![Shirone パフォーマンスベンチマーク](./Benchmark.webp)
+![Shirone パフォーマンスベンチマーク](./Benchmark.avif)
 
 ![Shirone のホームページ](./public/assets/projects/shirone.webp)
 

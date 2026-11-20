@@ -30,7 +30,7 @@ The [online documentation](https://docs.shirone.mysqil.com/) is the main entry p
 
 The current reference run scores 100 for Performance, Accessibility, Best Practices, and SEO, with all three agentic browsing checks passing. The detailed performance metrics also reach 100 in this run; results can vary with hosting, content, and network conditions.
 
-![Shirone benchmark](./Benchmark.webp)
+![Shirone benchmark](./Benchmark.avif)
 
 ![Shirone homepage](./public/assets/projects/shirone.webp)
 
