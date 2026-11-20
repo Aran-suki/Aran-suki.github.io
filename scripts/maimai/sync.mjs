@@ -12,6 +12,7 @@
  * - 封面下载并压缩到 public/assets/maimai/covers/，页面不直接热链水鱼。
  * - 输出 src/data/maimai/player.json（公开数据，可提交）。
  */
+import { existsSync } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
@@ -85,6 +86,12 @@ const coverName = (id) => `${String(id).padStart(5, "0")}.avif`;
 await mkdir(COVER_DIR, { recursive: true });
 const allEntries = [...b50.new, ...b50.old];
 const queue = allEntries.map((entry) => async () => {
+	const local = path.join(COVER_DIR, coverName(entry.songId));
+	// 已存在的封面不再重新下载/转码，避免每次同步都重写这一页的图片。
+	if (existsSync(local)) {
+		entry.cover = `/assets/maimai/covers/${coverName(entry.songId)}`;
+		return;
+	}
 	const remote = `${API.replace("/api/maimaidxprober", "")}/covers/${String(entry.songId).padStart(5, "0")}.png`;
 	try {
 		const res = await fetch(remote);
@@ -93,7 +100,7 @@ const queue = allEntries.map((entry) => async () => {
 		await sharp(buffer)
 			.resize(112, 112, { fit: "cover" })
 			.avif({ quality: 70, effort: 6 })
-			.toFile(path.join(COVER_DIR, coverName(entry.songId)));
+			.toFile(local);
 		entry.cover = `/assets/maimai/covers/${coverName(entry.songId)}`;
 	} catch (error) {
 		console.warn(`封面下载失败 ${entry.songId} ${entry.title}: ${error.message}`);
