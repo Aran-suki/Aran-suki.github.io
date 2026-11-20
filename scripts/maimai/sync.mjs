@@ -80,7 +80,7 @@ const b50 = {
 	old: bestOld.map(toEntry),
 };
 
-const coverName = (id) => `${String(id).padStart(5, "0")}.webp`;
+const coverName = (id) => `${String(id).padStart(5, "0")}.avif`;
 
 await mkdir(COVER_DIR, { recursive: true });
 const allEntries = [...b50.new, ...b50.old];
@@ -92,7 +92,7 @@ const queue = allEntries.map((entry) => async () => {
 		const buffer = Buffer.from(await res.arrayBuffer());
 		await sharp(buffer)
 			.resize(112, 112, { fit: "cover" })
-			.webp({ quality: 82 })
+			.avif({ quality: 70, effort: 6 })
 			.toFile(path.join(COVER_DIR, coverName(entry.songId)));
 		entry.cover = `/assets/maimai/covers/${coverName(entry.songId)}`;
 	} catch (error) {

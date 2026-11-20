@@ -1,11 +1,11 @@
 {
 	"username": "秋生GE",
 	"nickname": "秋生",
-	"rating": 15932,
+	"rating": 15945,
 	"dan": 16,
 	"plate": "",
 	"currentVersion": "maimai でらっくす PRiSM PLUS",
-	"ratingSum": 15932,
+	"ratingSum": 15945,
 	"b50": {
 		"new": [
 			{
@@ -24,6 +24,23 @@
 				"dxScore": 3034,
 				"from": "maimai でらっくす PRiSM PLUS",
 				"cover": ""
+			},
+			{
+				"songId": 11876,
+				"title": "Retribution ～ Cycle of Redemption ～",
+				"type": "DX",
+				"level": "14",
+				"levelIndex": 3,
+				"levelLabel": "Master",
+				"ds": 14.4,
+				"achievement": 100.6569,
+				"rate": "sssp",
+				"fc": "",
+				"fs": "sync",
+				"ra": 324,
+				"dxScore": 2972,
+				"from": "maimai でらっくす PRiSM PLUS",
+				"cover": "/assets/maimai/covers/11876.avif"
 			},
 			{
 				"songId": 11823,
@@ -245,23 +262,6 @@
 				"dxScore": 2768,
 				"from": "maimai でらっくす PRiSM PLUS",
 				"cover": ""
-			},
-			{
-				"songId": 11876,
-				"title": "Retribution ～ Cycle of Redemption ～",
-				"type": "DX",
-				"level": "14",
-				"levelIndex": 3,
-				"levelLabel": "Master",
-				"ds": 14.4,
-				"achievement": 100.2795,
-				"rate": "sss",
-				"fc": "",
-				"fs": "sync",
-				"ra": 311,
-				"dxScore": 2950,
-				"from": "maimai でらっくす PRiSM PLUS",
-				"cover": "/assets/maimai/covers/11876.avif"
 			}
 		],
 		"old": [
@@ -862,5 +862,5 @@
 			}
 		]
 	},
-	"updatedAt": "2026-11-14T07:44:04.337Z"
+	"updatedAt": "2026-11-20T15:37:59.599Z"
 }
