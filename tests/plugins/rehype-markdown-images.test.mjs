@@ -21,7 +21,8 @@ async function render(markdown) {
 	return code;
 }
 
-const IMAGE = "/logo/icon.webp";
+// 尺寸由 sharp 读取 public/ 下的真实资源，因此这里必须指向确实存在的图片
+const IMAGE = "/logo/icon.avif";
 
 test("parses the w-N% width token out of alt text", () => {
 	assert.deepEqual(parseMarkdownImageAlt("A demo image w-50%"), {
