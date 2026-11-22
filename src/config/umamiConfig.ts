@@ -15,7 +15,7 @@ export const umamiConfig: UmamiConfig = withUserConfig("umami", {
 	/** Umami 分享链接（可选）：留空则只做后台采集，不渲染前台统计 UI */
 	shareUrl: "",
 	/** Umami Website ID（Umami 后台 Website Settings 里的 `data-website-id`） */
-	websiteId: "",
+	websiteId: "0cf4656f-1696-4692-8c37-bfee3241acc3",
 	/** Umami 采集脚本 URL */
 	scriptUrl: "https://cloud.umami.is/script.js",
 });
