@@ -7,9 +7,11 @@ import { resolveAsset } from "@utils/asset-utils";
 import { createDefaultSchemeStyle } from "@utils/theme-utils";
 import { pathsEqual, toAbsoluteUrl, url } from "@utils/url-utils";
 import {
+	cloudflareAnalyticsConfig,
 	expressiveCodeConfig,
 	profileConfig,
 	resolvedFontOptions,
+	resolveCloudflareAnalyticsOptions,
 	resolveTextureOptions,
 	resolveUmamiOptions,
 	siteConfig,
@@ -91,6 +93,9 @@ const defaultTexturePreset = textureOptions.defaultPreset;
 const defaultTextureOpacity = textureOptions.defaultOpacity;
 const textureEnabled = textureOptions.enable;
 const umamiOptions = resolveUmamiOptions(umamiConfig);
+const cloudflareAnalyticsOptions = resolveCloudflareAnalyticsOptions(
+	cloudflareAnalyticsConfig,
+);
 
 const hasDesktopBanner = hasBannerImages(siteConfig.banner.src.desktop);
 const hasMobileBanner = hasBannerImages(siteConfig.banner.src.mobile);
@@ -155,6 +160,14 @@ const defaultSchemeStyle = createDefaultSchemeStyle();
 		))}
 		{umamiOptions?.websiteId && umamiOptions.scriptUrl && (
 			<script is:inline async src={umamiOptions.scriptUrl} data-website-id={umamiOptions.websiteId} data-auto-track="true"></script>
+		)}
+		{cloudflareAnalyticsOptions && (
+			<script
+				is:inline
+				type="module"
+				src="https://static.cloudflareinsights.com/beacon.min.js"
+				data-cf-beacon={JSON.stringify({ token: cloudflareAnalyticsOptions.token })}
+			></script>
 		)}
 				{favicons.map(favicon => (
 			<link rel="icon"

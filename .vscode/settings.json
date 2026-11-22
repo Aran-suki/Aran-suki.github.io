@@ -147,6 +147,10 @@
     "./.vscode/schemas/series.schema.json": [
       "config/series.yaml",
       "config/series.yml"
+    ],
+    "./.vscode/schemas/cloudflare-analytics.schema.json": [
+      "config/cloudflare-analytics.yaml",
+      "config/cloudflare-analytics.yml"
     ]
   }
 }

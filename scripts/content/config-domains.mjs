@@ -165,6 +165,12 @@ export const CONFIG_DOMAINS = Object.freeze([
 		module: "@/types/umamiConfig",
 	},
 	{
+		key: "cloudflareAnalytics",
+		file: "cloudflare-analytics",
+		type: "CloudflareAnalyticsConfig",
+		module: "@/types/cloudflareAnalyticsConfig",
+	},
+	{
 		key: "about",
 		file: "about",
 		type: "AboutConfig",

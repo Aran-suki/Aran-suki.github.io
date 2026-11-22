@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "cloudflareAnalytics configuration override",
+  "description": "Shirone cloudflareAnalytics config schema generated from @/types/cloudflareAnalyticsConfig.CloudflareAnalyticsConfig",
+  "type": "object",
+  "properties": {
+    "enable": {
+      "type": "boolean",
+      "description": "全局开关：false 时完全不注入 beacon 脚本，零外部请求、零额外 DOM"
+    },
+    "token": {
+      "type": "string",
+      "description": "Cloudflare Web Analytics 的 beacon Token（`data-cf-beacon` 中的 `token`）"
+    }
+  },
+  "additionalProperties": false
+}
