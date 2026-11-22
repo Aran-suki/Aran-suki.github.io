@@ -186,7 +186,8 @@ const postLicense = resolveLicenseConfig(
 	entry.data.license,
 	profileConfig.name,
 );
-const umamiEnabled = resolveUmamiOptions(umamiConfig) !== null;
+// 前台统计 UI 只在配置了公开分享链接时渲染；只做后台采集时保持隐藏。
+const umamiEnabled = Boolean(resolveUmamiOptions(umamiConfig)?.shareUrl);
 const authorAvatarUrl = shareOptions
 	? await resolveAsset(profileConfig.avatar ?? "")
 	: "";

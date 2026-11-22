@@ -298,10 +298,12 @@ export function shirones(options: ShironesOptions = {}): AstroIntegration {
 					"umamiConfig",
 					registryRef,
 				);
-				const umamiConfig = umamiModule.umamiConfig as { shareUrl: string };
+				const umamiConfig = umamiModule.umamiConfig as {
+					shareUrl?: string;
+				};
 				const resolveUmamiOptions = umamiModule.resolveUmamiOptions as (
 					c: unknown,
-				) => unknown;
+				) => { shareUrl?: string } | null;
 
 				const musicWidgetEnabled = Boolean(
 					sidebarConfig?.enable &&
@@ -311,7 +313,11 @@ export function shirones(options: ShironesOptions = {}): AstroIntegration {
 				);
 				const musicEnabled =
 					musicWidgetEnabled && resolveMusicOptions(musicConfig) !== null;
-				const umamiEnabled = resolveUmamiOptions(umamiConfig) !== null;
+				// oddmisc 运行时只负责读取公开分享统计；纯采集模式（无 shareUrl）
+				// 不注入它，页面因此保持零额外 DOM 与零第三方运行时。
+				const umamiShareUrl =
+					resolveUmamiOptions(umamiConfig)?.shareUrl?.trim() ?? "";
+				const umamiEnabled = Boolean(umamiShareUrl);
 
 				// ── 2. Watch config files so the dev server restarts on edits ───
 				if (command === "dev" && existsSync(paths.configDir)) {
@@ -350,7 +356,7 @@ export function shirones(options: ShironesOptions = {}): AstroIntegration {
 								paths,
 								command,
 								{
-									umamiConfig,
+									umamiConfig: { shareUrl: umamiShareUrl },
 									umamiEnabled,
 								},
 								registryRef,

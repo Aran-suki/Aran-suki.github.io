@@ -25,11 +25,6 @@ export {
 	resolveLastUpdatedNoticeOptions,
 } from "./articleConfig";
 export {
-	cloudflareAnalyticsConfig,
-	resolveCloudflareAnalyticsOptions,
-	type ResolvedCloudflareAnalyticsOptions,
-} from "./cloudflareAnalyticsConfig";
-export {
 	commentConfig,
 	type ResolvedCommentOptions,
 	resolveCommentOptions,
